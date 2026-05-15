@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             type: 'winner',
-            text: 'I wish you stay happy now and fo ever❤️',
+            text: 'I wish you stay happy now and for ever❤️',
             image: 'hk_love.png',
             buttons: []
         }
