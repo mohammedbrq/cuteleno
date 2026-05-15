@@ -1,8 +1,6 @@
 :root {
     --primary-color: #ffb7c5;
-    /* Baby Pink */
     --secondary-color: #ff69b4;
-    /* Hot Pink */
     --text-color: #5a2e3f;
     --white: #ffffff;
 }
@@ -11,8 +9,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    background-image: url('../images/bg_magical.png');
-    /* New magical background */
+    /* Corrected Path: removed ../ */
+    background-image: url('images/bg_magical.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -26,18 +24,11 @@ body {
 
 .main-container {
     background-color: rgba(255, 255, 255, 0.6);
-    /* More transparency to see vibrant background */
     padding: 2rem;
-    border-radius: 0;
-    box-shadow: none;
     text-align: center;
-    max-width: none;
     width: 100vw;
     height: 100vh;
-    border: none;
     position: relative;
-
-    /* Flex to center content vertically/horizontally */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,7 +37,6 @@ body {
 
 .kitty-img {
     width: 400px;
-    /* Much bigger! */
     height: auto;
     margin-bottom: 20px;
     filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
@@ -64,13 +54,6 @@ h1 {
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
     font-size: 2rem;
-}
-
-p {
-    color: var(--text-color);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
 }
 
 .btn {
@@ -91,52 +74,21 @@ p {
     transform: scale(1.05);
 }
 
-.btn:active {
-    transform: scale(0.95);
-}
-
 .winner-text {
     font-size: 2.5rem;
     color: var(--secondary-color);
     animation: pulse 1s infinite;
 }
 
-@keyframes popIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 @keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 .fade-enter {
@@ -150,75 +102,30 @@ p {
     transition: opacity 0.5s, transform 0.5s;
 }
 
-.fade-exit {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .fade-exit-active {
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.5s, transform 0.5s;
-
 }
 
-/* Verses Container */
 .verses-container {
     position: absolute;
     top: 50%;
     left: 50%;
-    /* Center horizontally */
     transform: translate(-50%, -50%);
-    /* perfectly center */
     width: 100%;
-    /* Full width to allow centering within it */
     display: flex;
     justify-content: center;
-    /* Push items to center */
     gap: 450px;
-    /* Gap slightly larger than image width (400px) */
     pointer-events: none;
     z-index: 10;
 }
 
 .verse-box {
-    pointer-events: auto;
-    flex: 0 0 auto;
-    width: auto;
-    max-width: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: var(--text-color);
     font-size: 3rem;
-    /* VERY BIG - 3rem */
     font-weight: 900;
     font-family: 'Amiri', 'Georgia', serif;
     text-shadow: 2px 2px 0px rgba(255, 255, 255, 1);
-    line-height: 1.3;
-    transition: opacity 0.5s, transform 0.5s;
-    /* Allow animation */
-}
-
-.verse-line {
-    margin: 10px 0;
-    white-space: normal;
     text-align: center;
-}
-
-@media (max-width: 1024px) {
-    .verses-container {
-        position: static;
-        transform: none;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 2rem;
-        padding: 0;
-        gap: 30px;
-    }
-
-    .verse-box {
-        max-width: 90%;
-        font-size: 2rem;
-    }
 }
